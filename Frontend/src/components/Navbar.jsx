@@ -81,7 +81,7 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
         </Link>
 
         {/* Search Bar */}
-        {isLoggedIn && location.pathname === "/" && (
+        {isLoggedIn && (
           <div className="flex items-center bg-blue-100 p-2 rounded-lg space-x-2 w-32 lg:w-96">
             <FaSearch className="text-black" />
             <input
