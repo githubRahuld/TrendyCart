@@ -19,11 +19,11 @@ function App() {
   const getUser = async () => {
     try {
       const url = `${baseUrl}/auth/login/success`;
-      const { data } = await axios.get(url, { withCredentials: true });
+      const { data } = await axios.get(url);
       setUser(data?.user);
       const userData = data?.user;
-      const accessToken = data?.user?.accessToken;
-
+      const accessToken = data?.user?.accessToken;   
+      
       if (accessToken) {
         // Save the accessToken in a cookie
         Cookies.set("accessToken", accessToken, {
