@@ -22,14 +22,19 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(
-    cors({
-        origin: ["https://trendy-cart-murex.vercel.app"],
-        methods: "GET,POST,PUT,DELETE,PATCH",
-        credentials: true,
-        allowedHeaders: ["Content-Type", "Authorization"], 
-    })
-);
+// cors configuration
+const corsOptions = {
+  origin: ["https://trendy-cart-murex.vercel.app"],
+  credentials: true, 
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], 
+  allowedHeaders: ["Content-Type", "Authorization"], 
+};
+
+// Apply CORS to all routes
+app.use(cors(corsOptions));
+
+// Ensure preflight (OPTIONS) requests also use the same CORS settings
+app.options("*", cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json({ limit: "16kb" }));
