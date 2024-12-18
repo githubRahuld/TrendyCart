@@ -19,11 +19,7 @@ function App() {
   const getUser = async () => {
     try {
       const url = `${baseUrl}/auth/login/success`;
-      const { data } = await axios.get(url,{
-        headers: {
-          Authorization: `Bearer ${Cookies.get("accessToken")}`,
-        }
-      });
+      const { data } = await axios.get(url, { withCredentials: true });
       setUser(data?.user);
       const userData = data?.user;
       const accessToken = data?.user?.accessToken;   
@@ -33,7 +29,7 @@ function App() {
         Cookies.set("accessToken", accessToken, {
           expires: 7, // Expire in 7 days
           secure: process.env.NODE_ENV === "production",
-          sameSite: "Strict",
+          sameSite: "None",
         });
       }
 
