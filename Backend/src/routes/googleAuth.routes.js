@@ -27,7 +27,7 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
     "/google/callback",
     passport.authenticate("google", {
-        successRedirect: "http://localhost:5173/users/home",
+        successRedirect: "https://trendy-cart-murex.vercel.app/users/home",
         failureRedirect: "/login/failed",
     })
 );
