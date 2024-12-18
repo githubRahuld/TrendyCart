@@ -1,6 +1,6 @@
 # Trendy Cart
 
-[Trendy Cart](https://github.com/githubRahuld/TrendyCart.git) is an e-commerce web application built with modern web technologies. This project allows users to browse products, add items to the cart, and make purchases seamlessly. It provides an intuitive shopping experience with secure user authentication, user profiles, and order management. Trendy Cart is designed to be highly scalable and responsive, making it accessible on both desktop and mobile devices.
+[Trendy Cart](https://trendy-cart-murex.vercel.app) is an e-commerce web application built with modern web technologies. This project allows users to browse products, add items to the cart, and make purchases seamlessly. It provides an intuitive shopping experience with secure user authentication, user profiles, and order management. Trendy Cart is designed to be highly scalable and responsive, making it accessible on both desktop and mobile devices.
 
 ## Features
 
@@ -73,6 +73,7 @@ Follow these steps to set up the project on your local machine:
     RAZORPAY_KEY_SECRET
     
 4. Run both backend and frontend servers.
+
   - Backend:
   ```bash
     cd backend
